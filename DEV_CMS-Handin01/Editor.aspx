@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editor.aspx.cs" Inherits="DEV_CMS_Handin01.Editor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Editor.aspx.cs" Inherits="DEV_CMS_Handin01.Editor" %>
 
 <!DOCTYPE html>
 
@@ -13,8 +13,6 @@
             <asp:Label ID="LabelHeading" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Administration"></asp:Label>
             <br />
             <asp:Label ID="LabelTitel" runat="server" Font-Italic="True" Font-Size="Large" Text="Editor page: Selection for Template"></asp:Label>
-            <br />
-            <br />
             <br />
             <br />
             <asp:Label ID="LabelSubheading1" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select those Items you wanna publish on the Template"></asp:Label>
@@ -63,31 +61,31 @@
             <br />
             <asp:Label ID="LabelSmalltitel1" runat="server" Font-Italic="True" Font-Size="Small" Text="// The Main Item is unique and will be a Highlighted Item"></asp:Label>
             <br />
-            <asp:DropDownList ID="DropDownListMainItem" runat="server" datasourceid="SqlDataSource2" DataTextField="Headline" DataValueField="ItemID" Width="214px">
+            <asp:DropDownList ID="DropDownListMainItem" runat="server" datasourceid="SqlDataSource2" DataTextField="ItemName" DataValueField="ItemID" Width="214px">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CMSConnectionString10 %>" DeleteCommand="DELETE FROM [Items] WHERE [ItemID] = @original_ItemID AND [Category] = @original_Category AND [Headline] = @original_Headline AND [Picture] = @original_Picture AND [Description] = @original_Description" InsertCommand="INSERT INTO [Items] ([Category], [Headline], [Picture], [Description]) VALUES (@Category, @Headline, @Picture, @Description)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Items]" UpdateCommand="UPDATE [Items] SET [Category] = @Category, [Headline] = @Headline, [Picture] = @Picture, [Description] = @Description WHERE [ItemID] = @original_ItemID AND [Category] = @original_Category AND [Headline] = @original_Headline AND [Picture] = @original_Picture AND [Description] = @original_Description">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CMSConnectionString10 %>" DeleteCommand="DELETE FROM [Item] WHERE [ItemID] = @original_ItemID AND [Category] = @original_Category AND [ItemName] = @original_ItemName AND [img] = @original_img AND [Description] = @original_Description" InsertCommand="INSERT INTO [Item] ([Category], [ItemName], [img], [Description]) VALUES (@Category, @ItemName, @img, @Description)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Item]" UpdateCommand="UPDATE [Item] SET [Category] = @Category, [ItemName] = @ItemName, [img] = @img, [Description] = @Description WHERE [ItemID] = @original_ItemID AND [Category] = @original_Category AND [ItemName] = @original_ItemName AND [img] = @original_img AND [Description] = @original_Description">
                 <DeleteParameters>
                     <asp:Parameter Name="original_ItemID" Type="Int32" />
                     <asp:Parameter Name="original_Category" Type="String" />
-                    <asp:Parameter Name="original_Headline" Type="String" />
-                    <asp:Parameter Name="original_Picture" Type="String" />
+                    <asp:Parameter Name="original_ItemName" Type="String" />
+                    <asp:Parameter Name="original_img" Type="String" />
                     <asp:Parameter Name="original_Description" Type="String" />
                 </DeleteParameters>
                 <InsertParameters>
                     <asp:Parameter Name="Category" Type="String" />
-                    <asp:Parameter Name="Headline" Type="String" />
-                    <asp:Parameter Name="Picture" Type="String" />
+                    <asp:Parameter Name="ItemName" Type="String" />
+                    <asp:Parameter Name="img" Type="String" />
                     <asp:Parameter Name="Description" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="Category" Type="String" />
-                    <asp:Parameter Name="Headline" Type="String" />
-                    <asp:Parameter Name="Picture" Type="String" />
+                    <asp:Parameter Name="ItemName" Type="String" />
+                    <asp:Parameter Name="img" Type="String" />
                     <asp:Parameter Name="Description" Type="String" />
                     <asp:Parameter Name="original_ItemID" Type="Int32" />
                     <asp:Parameter Name="original_Category" Type="String" />
-                    <asp:Parameter Name="original_Headline" Type="String" />
-                    <asp:Parameter Name="original_Picture" Type="String" />
+                    <asp:Parameter Name="original_ItemName" Type="String" />
+                    <asp:Parameter Name="original_img" Type="String" />
                     <asp:Parameter Name="original_Description" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
@@ -98,7 +96,7 @@
             <br />
             <asp:Label ID="LabelSmalltitel2" runat="server" Font-Italic="True" Font-Size="Small" Text="// The Second Item is an Additional Item"></asp:Label>
             <br />
-            <asp:DropDownList ID="DropDownListSecondItem" runat="server" datasourceid="SqlDataSource2" DataTextField="Headline" DataValueField="ItemID" Width="214px">
+            <asp:DropDownList ID="DropDownListSecondItem" runat="server" datasourceid="SqlDataSource2" DataTextField="ItemName" DataValueField="ItemID" Width="214px">
             </asp:DropDownList>
             <br />
             <br />
@@ -106,7 +104,7 @@
             <br />
             <asp:Label ID="LabelSmalltitel3" runat="server" Font-Italic="True" Font-Size="Small" Text="// The Third Item is an Additional Item"></asp:Label>
             <br />
-            <asp:DropDownList ID="DropDownListThirdItem" runat="server" datasourceid="SqlDataSource2" DataTextField="Headline" DataValueField="ItemID" Width="214px">
+            <asp:DropDownList ID="DropDownListThirdItem" runat="server" datasourceid="SqlDataSource2" DataTextField="ItemName" DataValueField="ItemID" Width="214px">
             </asp:DropDownList>
             <br />
             <br />
@@ -114,24 +112,24 @@
             <br />
             <asp:Label ID="LabelSmalltitel4" runat="server" Font-Italic="True" Font-Size="Small" Text="// This is a Joke Item"></asp:Label>
             <br />
-            <asp:DropDownList ID="DropDownListJokes" runat="server" DataSourceID="SqlDataSource3" DataTextField="Headline" DataValueField="JokeID" Width="214px">
+            <asp:DropDownList ID="DropDownListJokes" runat="server" DataSourceID="SqlDataSource3" DataTextField="ItemName" DataValueField="JokeID" Width="214px">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CMSDBConnectionString %>" DeleteCommand="DELETE FROM [Jokes] WHERE [JokeID] = @original_JokeID AND [Headline] = @original_Headline AND [Picture] = @original_Picture" InsertCommand="INSERT INTO [Jokes] ([Headline], [Picture]) VALUES (@Headline, @Picture)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Jokes]" UpdateCommand="UPDATE [Jokes] SET [Headline] = @Headline, [Picture] = @Picture WHERE [JokeID] = @original_JokeID AND [Headline] = @original_Headline AND [Picture] = @original_Picture">
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CMSDBConnectionString %>" DeleteCommand="DELETE FROM [Jokes] WHERE [JokeID] = @original_JokeID AND [ItemName] = @original_ItemName AND [img] = @original_img" InsertCommand="INSERT INTO [Jokes] ([ItemName], [img]) VALUES (@ItemName, @img)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Jokes]" UpdateCommand="UPDATE [Jokes] SET [ItemName] = @ItemName, [img] = @img WHERE [JokeID] = @original_JokeID AND [ItemName] = @original_ItemName AND [img] = @original_img">
                 <DeleteParameters>
                     <asp:Parameter Name="original_JokeID" Type="Int32" />
-                    <asp:Parameter Name="original_Headline" Type="String" />
-                    <asp:Parameter Name="original_Picture" Type="String" />
+                    <asp:Parameter Name="original_ItemName" Type="String" />
+                    <asp:Parameter Name="original_img" Type="String" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="Headline" Type="String" />
-                    <asp:Parameter Name="Picture" Type="String" />
+                    <asp:Parameter Name="ItemName" Type="String" />
+                    <asp:Parameter Name="img" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="Headline" Type="String" />
+                    <asp:Parameter Name="ItemName" Type="String" />
                     <asp:Parameter Name="Picture" Type="String" />
                     <asp:Parameter Name="original_JokeID" Type="Int32" />
-                    <asp:Parameter Name="original_Headline" Type="String" />
-                    <asp:Parameter Name="original_Picture" Type="String" />
+                    <asp:Parameter Name="original_ItemName" Type="String" />
+                    <asp:Parameter Name="original_img" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
             <br />

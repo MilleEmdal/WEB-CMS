@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Selection.aspx.cs" Inherits="DEV_CMS_Handin01.Selection" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Selection.aspx.cs" Inherits="DEV_CMS_Handin01.Selection" %>
 
 <!DOCTYPE html>
 

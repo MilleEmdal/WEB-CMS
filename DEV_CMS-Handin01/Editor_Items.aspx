@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editor_Items.aspx.cs" Inherits="DEV_CMS_Handin01.Editor_Items" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Code="Editor_Items.aspx.cs" Inherits="DEV_CMS_Handin01.Editor_Items" %>
 
 <!DOCTYPE html>
 
@@ -15,8 +15,6 @@
             <asp:Label ID="LabelTitel" runat="server" Font-Italic="True" Font-Size="Large" Text="Editor page: Items"></asp:Label>
             <br />
             <br />
-            <br />
-            <br />
             <asp:Label ID="LabelSubheading1" runat="server" Font-Bold="True" Font-Size="Medium" Text="Edit or Delete a Item:"></asp:Label>
             <asp:GridView ID="GridViewItems" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="SqlDataSource1" Width="600px">
                 <Columns>
@@ -31,7 +29,6 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CMSConnectionString4 %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Item]">
             </asp:SqlDataSource>
             <br />
-            <br />
             <asp:Label ID="LabelSubheading2" runat="server" Font-Bold="True" Font-Size="Medium" Text="Create a new Item:"></asp:Label>
             <asp:DetailsView ID="DetailsViewItems" runat="server" AutoGenerateRows="False" DataKeyNames="ItemID" DataSourceID="SqlDataSource2" DefaultMode="Insert" EmptyDataText="No selection is made" Height="50px" OnItemInserted="DetailsViewItems_ItemInserted" Width="350px">
                 <Fields>
@@ -45,7 +42,6 @@
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CMSConnectionString5 %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Item]">
             </asp:SqlDataSource>
             <br />
-            <br />
             <asp:Label ID="LabelSubheading3" runat="server" Font-Bold="True" Font-Size="Medium" Text="Upload image to folder:"></asp:Label>
             <br />
             <asp:FileUpload ID="FileUploadImage" runat="server" />
@@ -54,7 +50,6 @@
             <asp:Button ID="ButtonImage" runat="server" OnClick="ButtonImage_Click" Text="Upload Image to folder" />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <br />
             <br />
             <asp:Label ID="LabelMessages" runat="server" Font-Bold="True" Text="No messages"></asp:Label>
             <br />

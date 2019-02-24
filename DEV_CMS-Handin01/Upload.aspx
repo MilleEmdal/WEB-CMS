@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Upload.aspx.cs" Inherits="DEV_CMS_Handin01.Upload" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Upload.aspx.cs" Inherits="DEV_CMS_Handin01.Upload" %>
 
 <!DOCTYPE html>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editor_Jokes.aspx.cs" Inherits="DEV_CMS_Handin01.Editor_Jokes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Editor_Jokes.aspx.cs" Inherits="DEV_CMS_Handin01.Editor_Jokes" %>
 
 <!DOCTYPE html>
 

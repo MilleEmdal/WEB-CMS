@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Editor_Company.aspx.cs" Inherits="DEV_CMS_Handin01.Editor_Company" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Editor_Company.aspx.cs" Inherits="DEV_CMS_Handin01.Editor_Company" %>
 
 <!DOCTYPE html>
 
@@ -13,9 +13,6 @@
             <asp:Label ID="LabelHeading" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Administration"></asp:Label>
             <br />
             <asp:Label ID="LabelTitel" runat="server" Font-Italic="True" Font-Size="Large" Text="Editor page: Company"></asp:Label>
-            <br />
-            <br />
-            <br />
             <br />
             <asp:Label ID="LabelSubheading1" runat="server" Font-Bold="True" Font-Size="Medium" Text="Edit or Delete a Company:"></asp:Label>
             <asp:GridView ID="GridViewCompany" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="CompanyID" DataSourceID="SqlDataSource1" Width="600px">
